@@ -1,19 +1,17 @@
-PVector ball, move;
+PVector offset;
 
 void setup() {
+  offset = new PVector(0, -25);
   size(640, 480);
-  ball = new PVector(0, 0);
-  move = new PVector(5, 5); 
-  frameRate(24);
 }
 
 void draw() {
   background(#000000);
-  
-  // move the ball
-  ball.add(move);
-  
   // paint the ball
   stroke(#FFFFFF);
-  ellipse(ball.x, ball.y, 10, 10);
+  ellipse(mouseX, mouseY, 10, 10);
+  line (0, 0, mouseX, mouseY);
+  // paint the label
+  text("here's the mouse", 
+    mouseX + offset.x, mouseY+ offset.y);
 }

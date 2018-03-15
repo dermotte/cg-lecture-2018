@@ -25,5 +25,6 @@ void draw() {
   float scalar = 50;
   ellipse(320+c2mouse.x*scalar, 240+c2mouse.y*scalar, 10, 10);
   line (320, 240, 320+c2mouse.x*scalar, 240+c2mouse.y*scalar);
+  // line (320, 240, 320+c2mouse.x, 240+c2mouse.y);
   
 }

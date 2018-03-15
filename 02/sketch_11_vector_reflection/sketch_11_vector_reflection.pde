@@ -1,21 +1,23 @@
-PVector v1, v2;
+PVector v1, v2, n;
 
 void setup() {
-  size(640, 480);
-  v1 = new PVector(120, 60);
-  v2 = new PVector();
-  textSize(24);
-  textAlign(CENTER, CENTER);
+   size(640, 480);
+   v1 = new PVector();
+   v2 = new PVector();
+   n = new PVector(0, 1);
 }
 
 void draw() {
-  background(0);
-  stroke(255);
-  v2 = new PVector(mouseX-320, mouseY-240);
-  // draw:
-  line(320, 240, 320+v1.x, 240+v1.y);
-  line(320, 240, 320+v2.x, 240+v2.y);
-  // compute dot product:
-  float temp = v1.dot(v2)/(v1.mag()*v2.mag());
-  text("angle between v1 and v2 is " + round(degrees(acos(temp))), 320, 240);
+   background(0);
+   stroke(255);
+   v1 = new PVector(320-mouseX, 480-mouseY);
+   v2 = PVector.add(v1, PVector.mult(n, -2*PVector.dot(n, v1)));
+   // draw:
+   drawVector(320-v1.x, 480-v1.y, v1);
+   drawVector(320, 480, v2);
+}
+
+void drawVector(float x, float y, PVector v) {
+   line(x, y, v.x+x, v.y+y);
+   ellipse(v.x+x, v.y+y, 5, 5);
 }

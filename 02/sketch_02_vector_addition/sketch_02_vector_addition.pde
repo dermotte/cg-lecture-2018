@@ -19,10 +19,10 @@ void setup() {
 
 void draw() {
   background(#000000);
-  stroke(#FFFFFF);
+  stroke(#D249E8);
   line(0, 0, v1.x, v1.y);
   stroke(#7777FF);
-  line(0, 0, v2.x, v2.y);
+  line(v1.x, v1.y, v3.x, v3.y);
   stroke(#77FF77);
   line(0, 0, v3.x, v3.y);
 }

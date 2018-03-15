@@ -1,29 +1,23 @@
-PVector offset, c2mouse;
+PVector v1, v2;
 
 void setup() {
-  offset = new PVector(0, -25);
-  c2mouse = new PVector(); 
   size(640, 480);
+  v1 = new PVector(120, 60);
+  v2 = new PVector(40, 200); 
+  // noLoop();
 }
 
 void draw() {
-  background(#000000);
-  stroke(#FFFFFF);
-  // set the vector:
-  c2mouse.x = mouseX-320;
-  c2mouse.y = mouseY-240;
-  // normalize:
-  float vLength = sqrt(c2mouse.x*c2mouse.x 
-      + c2mouse.y*c2mouse.y);
-  c2mouse.x = c2mouse.x/vLength;
-  c2mouse.y = c2mouse.y/vLength;
-  // set the label:
-  text("Vector center 2 mouse is <"+c2mouse.x+", "+c2mouse.y+">", 
-    mouseX + offset.x, mouseY+ offset.y);
-
-  // paint the vector
-  float scalar = 50;
-  ellipse(320+c2mouse.x*scalar, 240+c2mouse.y*scalar, 10, 10);
-  line (320, 240, 320+c2mouse.x*scalar, 240+c2mouse.y*scalar);
-  
+  background(0);
+  stroke(255);
+  // integrate mouse position into general plan
+  v1.x = mouseX;
+  v1.y = mouseY;
+  // draw:
+  line(0, 0, v1.x, v1.y);
+  line(0, 0, v2.x, v2.y);
+  // compute dot product:
+  float product = v1.x*v2.x + v1.y*v2.y;
+  // print(product);
+  text("dot product is "+product, 200, 200);
 }

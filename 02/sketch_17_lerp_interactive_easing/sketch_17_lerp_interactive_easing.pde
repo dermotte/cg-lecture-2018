@@ -25,7 +25,7 @@ void mouseReleased() {
 }
 
 float ease(float f) {
-  return f*f; // smooth start
-  // return 1-(1-f)*(1-f); // smooth stop
+  //return f*f*f; // smooth start
+  return 1-(1-f)*(1-f)*(1-f); // smooth stop
   // return (1-f)*(f*f) + (f)*(1-(1-f)*(1-f)); // blend both ...
 }

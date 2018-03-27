@@ -4,19 +4,18 @@ void setup() {
 
 void draw() {
   background(0);
-  // noFill();
   translate(320, 240);
   rotateY(radians(mouseX));
   
   beginShape(TRIANGLES);
   
-  vertex(50, 0, 0);
+  vertex(0, 50, 0);
   vertex(50, -100, 0);
   vertex(-50, -100, 0);
   
-  vertex(50, 0, 0);
-  vertex(-50, 0, 0);
-  vertex(-50,-100,0);
+  vertex(0, 50, 0);
+  vertex(50, -100, 0);
+  vertex(50,-100,100);
   
   endShape();
 }

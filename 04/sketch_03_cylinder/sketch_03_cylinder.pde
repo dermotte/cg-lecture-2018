@@ -8,7 +8,6 @@ void setup() {
 
 void draw() {
   background(0);
-  // noFill();
   translate(320, 240);
   rotateY(radians(mouseX));
   

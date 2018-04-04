@@ -1,16 +1,16 @@
-PShader shader;
+PShader phong;
 boolean shaderEnabled = true;  
 
 void setup() {
   size(640, 360, P3D);
   noStroke();
   fill(204);
-  shader = loadShader("frag.glsl", "vert.glsl");
+  phong = loadShader("PhongFrag.glsl", "PhongVert.glsl");
 }
 
 void draw() {
   if (shaderEnabled == true) {
-    shader(shader);
+    shader(phong);
   }
 
   noStroke(); 

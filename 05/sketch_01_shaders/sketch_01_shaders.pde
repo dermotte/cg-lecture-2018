@@ -5,7 +5,7 @@ void setup() {
   size(640, 360, P3D);
   noStroke();
   fill(204);
-  shader = loadShader("frag.glsl", "vert.glsl");
+  shader = loadShader("gouraud_frag.glsl", "gouraud_vert.glsl");
 }
 
 void draw() {
@@ -13,7 +13,7 @@ void draw() {
     shader(shader);
   }
 
-  noStroke(); 
+  noStroke();  //<>//
   background(0); 
   float dirY = (mouseY / float(height) - 0.5) * 2;
   float dirX = (mouseX / float(width) - 0.5) * 2;

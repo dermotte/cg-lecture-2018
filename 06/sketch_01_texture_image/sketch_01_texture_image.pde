@@ -1,9 +1,9 @@
-PImage texture;
+PImage textureImage;
 float pos = 150;
 
 void setup() {
   size(640, 360, P3D);
-  texture = loadImage("mountain.jpg");
+  textureImage = loadImage("mountain.jpg");
   textureMode(IMAGE);
   fill(255);
   stroke(color(44,48,32));
@@ -15,7 +15,7 @@ void draw() {
   rotateZ(radians(mouseY));
   rotateY(-radians(mouseX));
   beginShape(QUADS);
-  texture(texture);
+  texture(textureImage);
   
   vertex(-pos, -pos,  0, 0, 0);
   vertex( pos, -pos,  0, 640, 0);
